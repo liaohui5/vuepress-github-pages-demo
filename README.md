@@ -51,3 +51,7 @@ cd -
 ### 3.查看结果
 
 查看 github pages 中, 部署好的 url(提交后, 可能需要等待 2 分钟左右才能刷新)
+
+![](https://raw.githubusercontent.com/liaohui5/images/main/images/202210010022423.png)
+
+![](https://raw.githubusercontent.com/liaohui5/images/main/images/202210010025323.png)
