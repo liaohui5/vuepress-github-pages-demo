@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>介绍 | vuepress demo</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="测试 github pages 部署 vuepress">
+    
+    <link rel="preload" href="/vuepress-github-pages-demo/assets/css/0.styles.d5c4e99b.css" as="style"><link rel="preload" href="/vuepress-github-pages-demo/assets/js/app.17828b93.js" as="script"><link rel="preload" href="/vuepress-github-pages-demo/assets/js/2.6539ea43.js" as="script"><link rel="preload" href="/vuepress-github-pages-demo/assets/js/7.b414cd35.js" as="script"><link rel="prefetch" href="/vuepress-github-pages-demo/assets/js/3.1551594b.js"><link rel="prefetch" href="/vuepress-github-pages-demo/assets/js/4.854c56f8.js"><link rel="prefetch" href="/vuepress-github-pages-demo/assets/js/5.f7ccee55.js"><link rel="prefetch" href="/vuepress-github-pages-demo/assets/js/6.14027d31.js">
+    <link rel="stylesheet" href="/vuepress-github-pages-demo/assets/css/0.styles.d5c4e99b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vuepress-github-pages-demo/" aria-current="page" class="home-link router-link-exact-active router-link-active"><!----> <span class="site-name">vuepress demo</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="介绍"><a href="#介绍" class="header-anchor">#</a> 介绍</h2> <p>利用 github pages 部署 vuepress 项目</p> <h2 id="部署步骤"><a href="#部署步骤" class="header-anchor">#</a> 部署步骤</h2> <h3 id="_1-新建编译部署脚本-publish-sh"><a href="#_1-新建编译部署脚本-publish-sh" class="header-anchor">#</a> 1.新建编译部署脚本 <code>publish.sh</code></h3> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token shebang important">#!/usr/bin/env sh</span>
+
+<span class="token comment"># 确保脚本抛出遇到的错误</span>
+<span class="token builtin class-name">set</span> <span class="token parameter variable">-e</span>
+
+<span class="token comment"># 生成静态文件</span>
+<span class="token function">npm</span> run docs:build
+
+<span class="token comment"># 进入生成的文件夹(注意目录路径)</span>
+<span class="token builtin class-name">cd</span> .vuepress/dist
+
+<span class="token function">git</span> init
+<span class="token function">git</span> <span class="token function">add</span> <span class="token parameter variable">-A</span>
+<span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">'deploy'</span>
+
+<span class="token comment"># 注意修改用户名和分支名(有的人默认分支是master而不是main)</span>
+<span class="token comment"># 而且需要再 github 中存在这个仓库并且有访问权限</span>
+<span class="token comment"># 最终会部署到: https://&lt;USER_NAME&gt;.github.io/&lt;REPO_NAME&gt;</span>
+<span class="token function">git</span> push <span class="token parameter variable">-f</span> https://github.com/liaohui5/vuepress-github-pages-demo.git main:gh-pages
+
+<span class="token builtin class-name">cd</span> -
+
+<span class="token comment"># 写好文档之后, 执行这个脚本</span>
+</code></pre></div><h3 id="_2-新建仓库操作"><a href="#_2-新建仓库操作" class="header-anchor">#</a> 2.新建仓库操作</h3> <ol><li>创建仓库</li> <li>在 <code>.vitepress/config.js</code> 中设置 <code>base</code> 选项(和仓库名同名)</li></ol> <p><img src="https://raw.githubusercontent.com/liaohui5/images/main/images/202209302347575.png" alt=""></p> <h3 id="_3-github-pages-设置"><a href="#_3-github-pages-设置" class="header-anchor">#</a> 3.github pages 设置</h3></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/vuepress-github-pages-demo/assets/js/app.17828b93.js" defer></script><script src="/vuepress-github-pages-demo/assets/js/2.6539ea43.js" defer></script><script src="/vuepress-github-pages-demo/assets/js/7.b414cd35.js" defer></script>
+  </body>
+</html>
